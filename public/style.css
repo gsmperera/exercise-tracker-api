@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background: #e43a15;
+    background: -webkit-linear-gradient(to right, #e65245, #e43a15);
+    background: linear-gradient(to right, #e65245, #e43a15);
+}
+
+h1 {
+    color: white;
+}
+
+button {
+    height: 25px;
+    color: white;
+    background-color: teal;
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    height: 25px;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+
+.forms {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: left;
+    color: white;
+}
+.forms .add-exercise {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 5px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+.forms .add-exercise input,
+.forms .add-exercise button {
+    margin: 5px 0;
+}
+.forms .new-user {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 5px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+.forms .new-user input,
+.forms .new-user button {
+    margin: 5px 0;
+}
