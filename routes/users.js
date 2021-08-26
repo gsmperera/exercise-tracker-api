@@ -10,7 +10,10 @@ router.post('/', async (req, res) => {
     try {
         const createdUser = await user.save();
         console.log('new user was created successfuly!');
-        res.json({ username: createdUser.username, _id: createdUser._id });
+        res.status(200).send({
+            username: createdUser.username,
+            _id: createdUser._id,
+        });
     } catch (ex) {
         console.error(ex.message);
         res.json({ error: ex.message });
