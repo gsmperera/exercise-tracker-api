@@ -13,7 +13,11 @@ router.post('/', async (req, res) => {
         console.log(
             `new user ${createdUser.username} was created successfuly!`
         );
-        res.status(200).send(createdUser);
+
+        res.status(200).send({
+            _id: createdUser._id,
+            username: createdUser.username,
+        });
     } catch (ex) {
         console.error(ex.message);
         res.json({ error: ex.message });

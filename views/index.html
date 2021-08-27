@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise Tracker</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"  type="image/x-icon" />
 </head>
 <body>
     <h1>Exercise Tracker</h1>
     <div class="forms">
-        <form class="add-exercise" id="add-exercise-form" method="POST">
+        <form class="add-exercise" id="add-exercise-form" method="post">
             <h2>Add exercises</h2>
             <p>POST /api/users/:_id/exercises</p>
             <input type="text" name="id" id="userId" placeholder="id">
@@ -19,7 +20,7 @@
             <input type="text" name="date" id="date" placeholder="yyyy-mm-dd">
             <button type="submit">Submit</button>
         </form>
-        <form class="new-user" action="./api/users" method="POST">
+        <form class="new-user" action="/api/users" method="post">
             <h2>Create a new user</h2>
             <p>POST /api/users</p>
             <input type="text" name="username" id="username" placeholder="username">
