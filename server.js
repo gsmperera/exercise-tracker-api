@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require('mongoose');
@@ -8,6 +9,7 @@ const home = require('./routes/home');
 console.log(process.cwd());
 console.log(__dirname);
 
+app.use(cors());
 app.use('/', express.static(`${process.cwd()}/public`));
 app.use('/api/users', express.urlencoded({ extended: false }));
 app.use('/api/users', express.json());
