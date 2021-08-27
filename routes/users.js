@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
 router.post('/:_id/exercises', async (req, res) => {
     const newSession = {
         description: req.body.description,
-        duration: req.body.duration,
+        duration: parseInt(req.body.duration),
     };
 
     if (req.body.date) {
