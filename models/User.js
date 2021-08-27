@@ -12,6 +12,27 @@ const UserSchema = new Schema({
         unique: true,
         required: true,
     },
+    logs: [
+        {
+            description: {
+                type: String,
+                required: true,
+                maxlength: [50, 'Description is too longer than 50 characters'],
+            },
+            duration: {
+                type: Number,
+                required: true,
+                min: [1, 'Duration must be longer than 1 minute'],
+            },
+            date: {
+                type: Date,
+                default: Date.now,
+            },
+        },
+    ],
+    count: {
+        type: Number,
+    },
 });
 
 const User = mongoose.model('User', UserSchema);
