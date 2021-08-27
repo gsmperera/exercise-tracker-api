@@ -5,21 +5,7 @@ const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
-        minlength: 4,
-        maxlength: 50,
-        validate: {
-            isAsync: true,
-            validator: function (name, callback) {
-                // checking whether username is already exist
-                let numberOfSameUserName;
-                User.find({ username: name }, (err, data) => {
-                    if (err) return console.error(err.message);
-                    numberOfSameUserName = data.length;
-                    callback(numberOfSameUserName === 0);
-                });
-            },
-            message: 'already exist',
-        },
+        unique: true,
     },
     logs: [
         {
