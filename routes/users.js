@@ -69,7 +69,7 @@ router.post('/:_id/exercises', async (req, res) => {
         res.json({
             _id: updatedUser._id,
             username: updatedUser.username,
-            date: newSession.date,
+            date: newSession.date.toDateString(),
             duration: newSession.duration,
             description: newSession.description,
         });
