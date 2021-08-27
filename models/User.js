@@ -1,34 +1,16 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const shortid = require('shortid');
 
 const UserSchema = new Schema({
+    _id: {
+        type: String,
+        default: shortid.generate,
+    },
     username: {
         type: String,
-        required: true,
         unique: true,
-    },
-    logs: [
-        {
-            description: {
-                type: String,
-                required: true,
-                maxlength: 50,
-            },
-            duration: {
-                type: Number,
-                required: true,
-            },
-            date: {
-                type: Date,
-                default: Date.now,
-            },
-        },
-    ],
-    count: {
-        type: Number,
-        default: function () {
-            return this.logs.length;
-        },
+        required: true,
     },
 });
 

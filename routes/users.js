@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const Log = require('../models/Log');
 
 // ##### Create new user #####
 router.post('/', async (req, res) => {
@@ -9,11 +10,10 @@ router.post('/', async (req, res) => {
     });
     try {
         const createdUser = await user.save();
-        console.log('new user was created successfuly!');
-        res.status(200).send({
-            username: createdUser.username,
-            _id: createdUser._id,
-        });
+        console.log(
+            `new user ${createdUser.username} was created successfuly!`
+        );
+        res.status(200).send(createdUser);
     } catch (ex) {
         console.error(ex.message);
         res.json({ error: ex.message });
